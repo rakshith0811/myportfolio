@@ -1,1 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Default dark gradient */
+    color: #fff;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
 
+  .dark-mode {
+    background: #f2f2f2 !important;
+    color: #111 !important;
+  }
+
+  .dark-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .dark-mode .nav-link {
+    color: #000 !important;
+  }
+
+  .dark-mode .card {
+    background-color: #fff !important;
+    color: #000;
+  }
+
+  .dark-mode footer {
+    background: #eee !important;
+    color: #000 !important;
+  }
+
+  #portfolioBrand {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.dark-mode #portfolioBrand {
+  color: black !important;
+}
+
+    .navbar {
+      background-color: #222;
+    }
+
+    .nav-link {
+      color: #fff !important;
+    }
+
+    .navbar-nav .nav-item {
+       margin-left: 25px;
+    }
+
+    .navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #2187e5;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Custom toggler for dark backgrounds */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Optional: Customize border color (if needed) */
+.custom-toggler {
+  border-color: rgb(33, 29, 29);
+}
+
+
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+    }
+
+    .btn-custom {
+      background-color: #5e60ce;
+      color: #fff;
+    }
+
+    .btn-custom:hover {
+      background-color: #4ea8de;
+    }
+
+    .card {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .form-control, .form-control:focus {
+      background-color: #fbf7f7;
+      color: #111;
+      border-color: #555;
+    }
+
+    .dark-mode .form-control, .dark-mode .form-control:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+
+    footer {
+      background-color: #222;
+      color: #fff;
+    }
+
+    .footer-icon {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .footer-icon {
+  color: #000 !important;
+}
+  </style>
+</head>
+<body>
+
+<!-- Theme Toggle Button 
+<button id="themeToggle" class="btn btn-outline-light position-fixed top-0 end-0 m-3" style="z-index: 1051; top: 70px;">
+    🌙
+  </button> -->
+  
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" id="portfolioBrand" href="#">My Portfolio</a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item">
+            <!-- Toggle inside navbar -->
+            <button id="themeToggle" class="btn btn-sm btn-outline-light ms-3">🌙</button>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="text-center my-4">
+      <img src="1222650615.jpg" class="rounded-circle img-fluid" alt="Profile" width="200" height="200">
+      <h1 class="mt-3" id="username">Hey It's Rakshith S</h1>
+      <p class="lead">Welcome to my portfolio!</p>
+      <a href="#projects" class="btn btn-custom mt-3">Explore Projects</a>
+      <a href="Resume(Rakshith S).pdf" class="btn btn-success mt-3" download>📄 Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">About Me</h2>
+    <p class="text-center">Hey! I'm Rakshith — a curious, tech-loving Computer Science Engineering student at Presidency University, Bengaluru. I thrive on solving problems through code and enjoy building creative, practical solutions that make life easier or more exciting. From smart IoT-based systems using Raspberry Pi to fun AI-driven games like my Minesweeper AI, I love experimenting with new technologies and pushing my limits.
+
+        While my academic path is rooted in tech, I also have a deep creative side. I’m genuinely passionate about video editing and content creation, and I'm fascinated by the art of storytelling through visuals. Whether it's crafting transitions, syncing music, or experimenting with cinematic effects, I find video editing to be a powerful and expressive outlet. In fact, I'm quite drawn to the film industry, and I’d love to someday combine my technical and creative interests to work on exciting projects at the intersection of technology and cinema.
+        
+        I’m constantly learning — from coding and machine learning to editing software and filmmaking techniques. Outside of academics and creative projects, you’ll find me playing cricket with friends, vibing to music, or geeking out about the latest in tech.
+        
+        I believe in growing every day, connecting with inspiring people, and building things that leave a mark — whether that’s a piece of software or a short film.</p>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Projects</h2>
+    <div id="loader" class="text-center mt-5" style="display:none;">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Talking Fingers – Speech-to-Sign Language Converter</h5>
+            <p class="card-text">Developed an Android app that converts multilingual speech and text into Indian Sign Language
+                (ISL). It processes input, breaks it into smaller parts, and generates ISL gestures using predefined
+                grammar rules, with a signing avatar displaying the output.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1" onclick="loadProjectContent()">View Project</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add more project cards if needed -->
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Project 2</h5>
+            <p class="card-text">Brief description of the project.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1" onclick="loadProjectContent()">View Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Project 3</h5>
+            <p class="card-text">Brief description of the project.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal1" onclick="loadProjectContent()">View Project</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel1">Project Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Detailed description of the project, tech stack, and links.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Skills -->
+<!-- <section id="skills" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Skills</h2>
+    <div class="row text-center">
+      <div class="col">
+        <span class="badge bg-info text-dark m-1">HTML</span>
+        <span class="badge bg-info text-dark m-1">CSS</span>
+        <span class="badge bg-info text-dark m-1">JavaScript</span>
+        <span class="badge bg-info text-dark m-1">React</span>
+        <span class="badge bg-info text-dark m-1">Node.js</span>
+        <span class="badge bg-info text-dark m-1">MongoDB</span>
+        <span class="badge bg-info text-dark m-1">Java</span>
+        <span class="badge bg-info text-dark m-1">Python</span>
+        <span class="badge bg-info text-dark m-1">Machine Learning</span>
+        <span class="badge bg-info text-dark m-1">Firebase</span>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!--
+<section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Skills</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">HTML</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">CSS</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">JavaScript</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">React</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">Node.js</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">MongoDB</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">Java</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">Python</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">Machine Learning</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="skill-box badge bg-info text-dark p-3 w-100">Firebase</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .skill-box {
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+    }
+    .skill-box:hover {
+      transform: scale(1.05);
+      background-color: #0dcaf0 !important; /* darker info blue */
+      color: white !important;
+    }
+  </style>
+-->
+  
+<section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Skills</h2>
+      <div class="row g-4 justify-content-center">
+        
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fab fa-html5 fa-2x text-danger"></i>
+            <p class="mt-2 mb-0">HTML</p>
+          </div>
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fab fa-css3-alt fa-2x text-primary"></i>
+            <p class="mt-2 mb-0">CSS</p>
+          </div>
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fab fa-js fa-2x text-warning"></i>
+            <p class="mt-2 mb-0">JavaScript</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fab fa-react fa-2x text-info"></i>
+            <p class="mt-2 mb-0">React</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fab fa-node-js fa-2x text-success"></i>
+            <p class="mt-2 mb-0">Node.js</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fas fa-database fa-2x text-secondary"></i>
+            <p class="mt-2 mb-0">MongoDB</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fab fa-java fa-2x text-primary"></i>
+            <p class="mt-2 mb-0">Java</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fab fa-python fa-2x text-warning"></i>
+            <p class="mt-2 mb-0">Python</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fas fa-robot fa-2x text-info"></i>
+            <p class="mt-2 mb-0">Machine Learning</p>
+          </div>
+        </div>
+  
+        <div class="col-6 col-sm-4 col-md-3 text-center">
+          <div class="p-3 border rounded shadow-sm">
+            <i class="fas fa-fire fa-2x text-danger"></i>
+            <p class="mt-2 mb-0">Firebase</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+<!-- Contact -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact</h2>
+    <form id="contact-form">
+      <div class="mb-3">
+        <input type="text" class="form-control" name="user_name" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" name="user_email" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-custom">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="text-center py-4">
+    <a href="https://github.com/rakshith0811" target="_blank" class="me-3 footer-icon"><i class="fab fa-github fa-lg"></i></a>
+    <a href="https://linkedin.com/in/rakshithreddy08" target="_blank" class="me-3 footer-icon"><i class="fab fa-linkedin fa-lg"></i></a>
+    <a href="mailto:rakshithreddyngr@gmail.com" class="footer-icon"><i class="fas fa-envelope fa-lg"></i></a>
+  </footer>
+  
+  <button id="backToTopBtn" class="btn btn-custom position-fixed" style="bottom: 30px; right: 30px; display: none; z-index: 999;">
+    ^
+  </button>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your Public Key
+  (function () {
+    emailjs.init("g0-DbVjEB1R-qQdFg"); // Replace with your actual public key
+  })();
+</script>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_jc2omn5', 'template_zya0z69', this)
+      .then(function () {
+        alert('✅ Message sent successfully!');
+        document.getElementById('contact-form').reset();
+      }, function (error) {
+        alert('❌ Failed to send message. Error: ' + JSON.stringify(error));
+      });
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a.nav-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (this.hash !== "") {
+        e.preventDefault();
+        document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Theme toggle
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      toggleBtn.innerText = "🌞";
+    } else {
+      toggleBtn.innerText = "🌙";
+    }
+  });
+
+  // Show/hide back to top button
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Loader with Promise
+  function loadProjectContent() {
+    document.getElementById("loader").style.display = "block";
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+        document.getElementById("loader").style.display = "none";
+        alert("Projects loaded!");
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
